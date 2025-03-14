@@ -1,0 +1,75 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 5.312,
+        "y": 5.092
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 4.564230681265696,
+        "y": 6.368404480600345
+      },
+      "isLocked": false,
+      "linkedName": "Reef5L"
+    },
+    {
+      "anchor": {
+        "x": 3.5919232128510914,
+        "y": 5.580915787173641
+      },
+      "prevControl": {
+        "x": 4.4410457797066965,
+        "y": 5.596640279152447
+      },
+      "nextControl": {
+        "x": 3.1580008715751506,
+        "y": 5.5728801882611245
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 1.10175,
+        "y": 7.018249999999999
+      },
+      "prevControl": {
+        "x": 0.8959999123645401,
+        "y": 7.186796336241392
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "HP1"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1.4754797441364695,
+      "rotationDegrees": 126.0
+    }
+  ],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 0.5,
+    "maxAcceleration": 0.5,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 126.0
+  },
+  "reversed": false,
+  "folder": "Barge 1 Paths",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -119.99999999999999
+  },
+  "useDefaultConstraints": true
+}
