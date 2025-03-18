@@ -148,7 +148,7 @@ public class ElevatorSubsystem extends SubsystemBase {
     }
 
     public void moveAtSpeed(double speed) {
-        elevatorMotor.set(speed * .5);
+        elevatorMotor.set(speed * -0.5);
     }
 
     // public Command homeElevator() {

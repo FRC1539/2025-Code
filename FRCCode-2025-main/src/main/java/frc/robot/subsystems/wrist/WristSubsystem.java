@@ -2,6 +2,8 @@ package frc.robot.subsystems.wrist;
 
 import java.util.function.Supplier;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix6.hardware.TalonFXS;
 import com.revrobotics.spark.SparkClosedLoopController;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.SparkBase.ControlType;
@@ -25,17 +27,20 @@ import frc.robot.subsystems.ElevatorWristSim;
 import frc.robot.Robot;
 import com.revrobotics.spark.SparkBase.ResetMode;
 import edu.wpi.first.wpilibj.motorcontrol.Talon;
+import com.ctre.phoenix6.sim.DeviceType;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 
 //@Logged
 public class WristSubsystem extends SubsystemBase {
-    Talon wristMotor;
+    TalonSRX wristMotor;
     //SparkMaxConfig wristMotorConfig;
     //static SparkClosedLoopController wristMotorController;
 
     public WristSubsystem() {
 
         // if (RobotBase.isReal()) {
-        wristMotor = new Talon(CAN.WRIST_MOTOR);
+        wristMotor = new TalonSRX(CAN.WRIST_MOTOR);
 
         //wristMotorController = wristMotor.getClosedLoopController();
 
@@ -64,7 +69,7 @@ public class WristSubsystem extends SubsystemBase {
     }
 */
     public void moveAtSpeed(double speed) {
-        wristMotor.set(speed * .5);
+        // wristMotor.set(speed * .5);
     }
 /* 
     public Command goToCoralScoreSetpoint(int level) {

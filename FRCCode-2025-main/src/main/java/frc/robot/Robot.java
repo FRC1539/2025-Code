@@ -8,11 +8,19 @@ import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.DataLogManager;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.automation.AutomatedScoring;
 import frc.robot.automation.AutomationSelector;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
+import static edu.wpi.first.units.Units.Percent;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,7 +37,10 @@ import frc.robot.automation.AutomationSelector;
 public class Robot extends TimedRobot {
     private Command m_autonomousCommand;
     private RobotContainer m_robotContainer = new RobotContainer();
-
+    
+    private TalonSRX m_armMotor = new TalonSRX(10); //NK
+    private static final int kXboxAuxChannel = 1; //NK
+    private XboxController m_XboxAux = new XboxController(kXboxAuxChannel); //NK
     public Robot() {
         // DataLogManager.start();
         // Epilogue.bind(this);
@@ -92,6 +103,8 @@ public class Robot extends TimedRobot {
 
     @Override
     public void teleopPeriodic() {
+     //   m_armMotor.set(ControlMode.PercentOutput, m_XboxAux.getRightTriggerAxis());
+        m_armMotor.set(ControlMode.PercentOutput, m_XboxAux.getRightY());
     }
 
     @Override
@@ -101,7 +114,7 @@ public class Robot extends TimedRobot {
 
     @Override
     public void simulationInit() {
-
+    
     }
 
     @Override
