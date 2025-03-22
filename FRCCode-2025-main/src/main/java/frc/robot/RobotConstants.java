@@ -38,7 +38,9 @@ public final class RobotConstants {
 
         public static final class DrivetrainConstants {
                 public static final double FRONT_LEFT_VIRTUAL_OFFSET_RADIANS = 0;
-                public static final double FRONT_RIGHT_VIRTUAL_OFFSET_RADIANS = 1.571; // -We do not apply an offset to the
+                // public static final double FRONT_LEFT_VIRTUAL_OFFSET_RADIANS = Units.rotationsToRadians(0.416992);
+                // public static final double FRONT_RIGHT_VIRTUAL_OFFSET_RADIANS = 0; // -We do not apply an offset to the
+                public static final double FRONT_RIGHT_VIRTUAL_OFFSET_RADIANS = 0; // -We do not apply an offset to the
                                                                                    // CANcoder
                                                                                    // angle, we just zero the encoders
                                                                                    // with the
@@ -87,7 +89,7 @@ public final class RobotConstants {
 
                 public static final int GYRO_ORIENTATION = -1; // 1 for upside down, -1 for right side up.
 
-                public static final boolean FIELD_RELATIVE = true;
+                public static final boolean FIELD_RELATIVE = false;
         }
 
         public static final class ElevatorConstants {
@@ -199,16 +201,19 @@ public final class RobotConstants {
 
                 // These PID constants relate to the movement and acceleration of the swerve
                 // motors themselfs.
-                public static final double DRIVING_P = 0.07;
+                public static final double DRIVING_P = .07
+                // public static final double DRIVING_P = 0.07
+                ;
+                // public static final double DRIVING_P = 0.07;
                 public static final double DRIVING_I = 0;
                 public static final double DRIVING_D = 0;
                 public static final double DRIVING_FF = 1 / DRIVE_WHEEL_FREE_SPEED_RPS;
                 public static final double DRIVING_MIN_OUTPUT_NORMALIZED = -1;
                 public static final double DRIVING_MAX_OUTPUT_NORMALIZED = 1;
 
-                public static final double TURNING_P = .65;
+                public static final double TURNING_P = .65; //0.65
                 public static final double TURNING_I = 0;
-                public static final double TURNING_D = .3;
+                public static final double TURNING_D = 0.0; //0.3
                 public static final double TURNING_FF = 0;
                 public static final double TURNING_MIN_OUTPUT_NORMALIZED = -1;
                 public static final double TURNING_MAX_OUTPUT_NORMALIZED = 1;
@@ -216,8 +221,8 @@ public final class RobotConstants {
                 public static final IdleMode DRIVING_MOTOR_IDLE_MODE = IdleMode.kBrake;
                 public static final IdleMode TURNING_MOTOR_IDLE_MODE = IdleMode.kBrake;
 
-                public static final int DRIVING_MOTOR_CURRENT_LIMIT_AMPS = 40; // amps
-                public static final int TURNING_MOTOR_CURRENT_LIMIT_AMPS = 20; // amps
+                public static final int DRIVING_MOTOR_CURRENT_LIMIT_AMPS = 60; // amps
+                public static final int TURNING_MOTOR_CURRENT_LIMIT_AMPS = 30; // amps
         }
 
         public static interface PortConstants {

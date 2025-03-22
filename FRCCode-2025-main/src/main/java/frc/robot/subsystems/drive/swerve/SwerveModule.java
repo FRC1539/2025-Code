@@ -124,7 +124,7 @@ public class SwerveModule {
                 m_turningSparkMax.configure(m_turningConfig, ResetMode.kNoResetSafeParameters,
                                 PersistMode.kPersistParameters);
 
-                m_desiredState.angle = new Rotation2d(0);
+                // m_desiredState.angle = new Rotation2d(0);
                 m_drivingEncoder.setPosition(0);
         }
 
@@ -147,6 +147,14 @@ public class SwerveModule {
                 return new SwerveModulePosition(
                                 m_drivingEncoder.getPosition(),
                                 new Rotation2d(m_turningEncoder.getPosition()));
+        }
+
+        public double getCurrent() {
+                return m_drivingSparkMax.getOutputCurrent();
+        }
+
+        public double getVoltage() {
+                return m_drivingSparkMax.getBusVoltage();
         }
 
         /**
@@ -190,7 +198,7 @@ public class SwerveModule {
                 m_drivingEncoder.setPosition(0); // arbitrarily set driving encoder to zero
         
                 // temp
-                m_turningAbsoluteEncoder.resetVirtualPosition();
+                // m_turningAbsoluteEncoder.resetVirtualPosition();
                 // the reading and setting of the calibrated absolute turning encoder values is
                 // done in the Drivetrain's constructor
 

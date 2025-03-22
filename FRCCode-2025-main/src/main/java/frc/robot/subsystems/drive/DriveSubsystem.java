@@ -206,6 +206,31 @@ public class DriveSubsystem extends SubsystemBase {
                     swerveModules[3].getPosition().distanceMeters
             });
 
+            
+            SmartDashboard.putNumberArray("modules speed meters per second", new double[] {
+                swerveModules[0].getState().speedMetersPerSecond,
+                swerveModules[1].getState().speedMetersPerSecond,
+                swerveModules[2].getState().speedMetersPerSecond,
+                swerveModules[3].getState().speedMetersPerSecond,
+            });
+
+       
+            SmartDashboard.putNumberArray("modules current", new double[] {
+                swerveModules[0].getCurrent(),
+                swerveModules[1].getCurrent(),
+                swerveModules[2].getCurrent(),
+                swerveModules[3].getCurrent(),
+            });
+
+                   
+            SmartDashboard.putNumberArray("modules voltage", new double[] {
+                swerveModules[0].getVoltage(),
+                swerveModules[1].getVoltage(),
+                swerveModules[2].getVoltage(),
+                swerveModules[3].getVoltage(),
+            });
+
+
             // SmartDashboard.putNumberArray("Virtual abs encoders", new double[] {
             // swerveModules[0].getTurningAbsoluteEncoder().getVirtualPosition(),
             // swerveModules[1].getTurningAbsoluteEncoder().getVirtualPosition(),

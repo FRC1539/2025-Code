@@ -21,6 +21,7 @@ import static edu.wpi.first.units.Units.Percent;
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 
+import edu.wpi.first.cameraserver.CameraServer;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -37,11 +38,11 @@ import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 public class Robot extends TimedRobot {
     private Command m_autonomousCommand;
     private RobotContainer m_robotContainer = new RobotContainer();
-    
-    private TalonSRX m_armMotor = new TalonSRX(10); //NK
-    private static final int kXboxAuxChannel = 1; //NK
-    private XboxController m_XboxAux = new XboxController(kXboxAuxChannel); //NK
+
+    // private static final int kXboxAuxChannel = 1; //NK
+    // private XboxController m_XboxAux = new XboxController(kXboxAuxChannel); //NK
     public Robot() {
+        CameraServer.startAutomaticCapture();
         // DataLogManager.start();
         // Epilogue.bind(this);
     }
@@ -103,8 +104,8 @@ public class Robot extends TimedRobot {
 
     @Override
     public void teleopPeriodic() {
-     //   m_armMotor.set(ControlMode.PercentOutput, m_XboxAux.getRightTriggerAxis());
-        m_armMotor.set(ControlMode.PercentOutput, m_XboxAux.getRightY());
+    //    m_armMotor.set(ControlMode.PercentOutput, m_XboxAux.getRightTriggerAxis());
+        // m_armMotor.set(ControlMode.PercentOutput, m_XboxAux.getRightY());
     }
 
     @Override
